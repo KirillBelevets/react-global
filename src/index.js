@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import UsingReactPureComponent from './createComponents/usingReactPureComponent'
+import UsingReactComponent from "./createComponents/usingReactComponent";
+import UsingFunctionalComponent from './createComponents/usingFunctionalComponent'
+
+const createElementH1 = React.createElement('h1', {}, "Hello World created with createElement")
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <>
+        {createElementH1}
+        <UsingReactComponent title="Hello World"/>
+        <UsingReactPureComponent title="Hello World"/>
+        <UsingFunctionalComponent title="Hello World"/>
+    </>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
